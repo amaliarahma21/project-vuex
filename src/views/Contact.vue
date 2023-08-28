@@ -50,3 +50,27 @@
 </div>
 
 </template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+
+export default {
+    computed: {
+        ...mapGetters('product', ['getProduct'])
+    },
+    methods: {
+        ...mapActions('product', ['fetchProduct']),
+        capitalizeFirstLetter(text) {
+            return text.charAt(0).toUpperCase() + text.slice(1);
+        },
+        ...mapActions("keranjang", ["fetchKeranjang"]),
+    },
+    beforeMount() {
+        this.fetchKeranjang();
+    },
+
+    mounted() {
+        this.fetchProduct()
+    }
+}
+</script>

@@ -8,6 +8,7 @@ import Contact from "../views/Contact.vue";
 import Brand from "../views/Brand.vue";
 import Kategori from "../views/Kategori.vue";
 import Profile from "../views/Profile.vue";
+import CartCheckout from "../views/CartCheckout.vue";
 
 function cekToken(to, from, next) {
     var isAuthenticated = false;
@@ -47,6 +48,16 @@ const routes = [
         path: "/product/:id",
         name: "SingleProduct",
         component: SingleProduct,
+    },
+    {
+        path: "/cart-checkout",
+        name: "CartCheckout",
+        component: CartCheckout,
+    },
+    {
+        path: "/checkout",
+        name: "Checkout",
+        component: () => import("../views/Checkout.vue")
     },
     {
         path: "/contact",

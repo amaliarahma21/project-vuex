@@ -116,7 +116,7 @@ export default {
 
             if (success) {
                 // Redirect to the desired route on successful login
-                this.$router.push('/home');
+                this.$router.push('/');
             } else {
                 alert("Login Failed");
             }

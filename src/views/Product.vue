@@ -63,8 +63,13 @@ export default {
         capitalizeFirstLetter(text) {
             return text.charAt(0).toUpperCase() + text.slice(1);
         },
+        ...mapActions("keranjang", ["fetchKeranjang"]),
     },
-    created() {
+    beforeMount() {
+        this.fetchKeranjang();
+    },
+
+    mounted() {
         this.fetchProduct()
     }
 }

@@ -27,12 +27,19 @@
       export default{
           computed: {
               ...mapGetters('kategori', ['getKategori']),
+              ...mapGetters('product', ['getProduct'])
           },
           methods: {
-              ...mapActions('kategori', ['fetchKategori'])
+              ...mapActions('kategori', ['fetchKategori']),
+              ...mapActions('product', ['fetchProduct']),
+              ...mapActions("keranjang", ["fetchKeranjang"]),
           },
-          created() {
+          beforeMount() {
               this.fetchKategori();
+              this.fetchKeranjang();
+          },
+          mounted() {
+            this.fetchProduct()
           },
       }
       </script>

@@ -41,7 +41,9 @@
                         <div class="lg:flex lg:items-start">
                             <div class="lg:order-2 lg:ml-5">
                                 <div class="max-w-xl overflow-hidden rounded-lg">
-                                    <img class="h-full w-full max-w-full object-cover" src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95" alt="" />
+                                    <img class="h-full w-full max-w-full object-cover"
+                                        src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95"
+                                        alt="" />
                                 </div>
                             </div>
 
@@ -49,15 +51,21 @@
                                 <div class="flex flex-row items-start lg:flex-col">
                                     <button type="button"
                                         class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                                        <img class="h-full w-full object-cover" src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95" alt="" />
+                                        <img class="h-full w-full object-cover"
+                                            src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95"
+                                            alt="" />
                                     </button>
                                     <button type="button"
                                         class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                                        <img class="h-full w-full object-cover" src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95" alt="" />
+                                        <img class="h-full w-full object-cover"
+                                            src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95"
+                                            alt="" />
                                     </button>
                                     <button type="button"
                                         class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                                        <img class="h-full w-full object-cover" src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95" alt="" />
+                                        <img class="h-full w-full object-cover"
+                                            src="https://down-id.img.susercontent.com/file/sg-11134201-22100-moe08j3dj8iv95"
+                                            alt="" />
                                     </button>
                                 </div>
                             </div>
@@ -65,7 +73,8 @@
                     </div>
 
                     <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-                        <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ capitalizeFirstLetter(product.name) }}</h1>
+                        <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ capitalizeFirstLetter(product.name)
+                        }}</h1>
 
                         <div class="mt-5 flex items-center">
                             <div class="flex items-center">
@@ -114,11 +123,11 @@
                         </div>
                         <br>
                         <div class="mb-4" v-if="token">
-                            <button
+                            <button @click="addKeranjang(product.id)"
                                 class="grid w-full cursor-pointer select-none rounded-md border border-purple-400 bg-purple-400 py-2 px-5 text-center align-middle font-bold text-white truncate text-white shadow hover:border-purple-400 hover:bg-purple-400 hover:text-white focus:border-purple-400 focus:bg-purple-400 focus:text-white focus:shadow-none"
                                 type="submit">+ Cart</button>
                         </div>
-                        
+
                         <div class="mb-4" v-else>
                             <router-link to="/login">
                                 <button
@@ -128,49 +137,55 @@
                         </div>
                     </div>
 
-                        <ul class="mt-8 space-y-2">
-                            <li class="flex items-center text-left text-sm font-medium text-gray-600">
-                                <svg class="mr-2 block h-5 w-5 align-middle text-gray-500"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        class=""></path>
-                                </svg>
-                                Free shipping worldwide
-                            </li>
+                    <ul class="mt-8 space-y-2">
+                        <li class="flex items-center text-left text-sm font-medium text-gray-600">
+                            <svg class="mr-2 block h-5 w-5 align-middle text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    class=""></path>
+                            </svg>
+                            Free shipping worldwide
+                        </li>
 
-                            <li class="flex items-center text-left text-sm font-medium text-gray-600">
-                                <svg class="mr-2 block h-5 w-5 align-middle text-gray-500"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                                        class=""></path>
-                                </svg>
-                                Cancel Anytime
-                            </li>
-                        </ul>
+                        <li class="flex items-center text-left text-sm font-medium text-gray-600">
+                            <svg class="mr-2 block h-5 w-5 align-middle text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                    class=""></path>
+                            </svg>
+                            Cancel Anytime
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="border-b border-gray-300">
+                        <nav class="flex gap-4">
+                            <a href="#" title=""
+                                class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">
+                                Description </a>
+
+
+                        </nav>
                     </div>
 
-                    <div class="lg:col-span-3">
-                        <div class="border-b border-gray-300">
-                            <nav class="flex gap-4">
-                                <a href="#" title=""
-                                    class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">
-                                    Description </a>
-
-
-                            </nav>
-                        </div>
-
-                        <div class="mt-8 flow-root sm:mt-12">
-                            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illo ea fuga perferendis alias totam. Neque officia quam facilis similique minima! Aliquid fugiat officia veritatis velit sint. Quas totam soluta minima praesentium consequatur quos repudiandae quisquam fugit inventore, quaerat quod iusto alias, illo quae voluptatum incidunt. Minus praesentium aliquid molestias nam delectus molestiae ab dolorum eum ducimus odit porro exercitationem reiciendis deserunt adipisci doloribus, non soluta, minima laborum eaque enim. Perferendis maxime optio nulla porro, quam tempora corrupti iure itaque laborum asperiores, perspiciatis quis! Sapiente asperiores odit veniam maxime assumenda mollitia possimus atque? Veritatis dolore ipsa, commodi incidunt enim inventore!</p>
-                        </div>
+                    <div class="mt-8 flow-root sm:mt-12">
+                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illo ea fuga
+                            perferendis alias totam. Neque officia quam facilis similique minima! Aliquid fugiat officia
+                            veritatis velit sint. Quas totam soluta minima praesentium consequatur quos repudiandae quisquam
+                            fugit inventore, quaerat quod iusto alias, illo quae voluptatum incidunt. Minus praesentium
+                            aliquid molestias nam delectus molestiae ab dolorum eum ducimus odit porro exercitationem
+                            reiciendis deserunt adipisci doloribus, non soluta, minima laborum eaque enim. Perferendis
+                            maxime optio nulla porro, quam tempora corrupti iure itaque laborum asperiores, perspiciatis
+                            quis! Sapiente asperiores odit veniam maxime assumenda mollitia possimus atque? Veritatis dolore
+                            ipsa, commodi incidunt enim inventore!</p>
                     </div>
                 </div>
             </div>
-            <!-- <div v-else>
+        </div>
+        <!-- <div v-else>
                 Product not found.
             </div>
         </div> -->
@@ -193,16 +208,23 @@ export default {
         },
     },
     methods: {
-        ...mapActions("product", ["fetchSingleProduct", "fetchProduct"]), 
+        ...mapActions("product", ["fetchSingleProduct", "fetchProduct"]),
+        //keranjang
         ...mapActions("keranjang", ["fetchKeranjang"]),
+
+        //menambah ke keranjang
+        ...mapActions("product", ["addKeranjang"]),
+        // tambahKeranjang(){
+
+        // },
         capitalizeFirstLetter(text) {
             return text.charAt(0).toUpperCase() + text.slice(1);
         },
     },
-    beforeMount(){
-      this.fetchProduct();
-      this.fetchKeranjang();
-    },  
+    beforeMount() {
+        this.fetchProduct();
+        this.fetchKeranjang();
+    },
     mounted() {
         const productId = this.$route.params.id;
         console.log("Fetching single product with ID:", productId);

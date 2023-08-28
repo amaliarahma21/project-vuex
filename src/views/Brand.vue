@@ -25,12 +25,20 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
     computed: {
         ...mapGetters('brand', ['getBrand']),
+        ...mapGetters('product', ['getProduct'])
     },
     methods: {
-        ...mapActions('brand', ['fetchBrand'])
+        ...mapActions('brand', ['fetchBrand']),
+        ...mapActions('product', ['fetchProduct']),
+        ...mapActions("keranjang", ["fetchKeranjang"]),
     },
-    created() {
+    beforeMount() {
         this.fetchBrand();
+        this.fetchKeranjang();
     },
+    mounted() {
+        this.fetchProduct()
+    }
+   
 }
 </script>
