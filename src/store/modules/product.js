@@ -53,6 +53,7 @@ const product = {
                     });
                     commit("ADD_KERANJANG", response.data);
                     console.log(response.data);
+                    alert('Berhasil Menambahkan');
                     
             } catch (error) {
                 console.log(error);

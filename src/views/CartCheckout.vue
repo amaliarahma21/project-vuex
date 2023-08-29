@@ -37,10 +37,10 @@
                         <p class="text-gray-700">Subtotal</p>
                         <p class="text-gray-700">Rp.{{ calculateTotal }}</p>
                     </div>
-                    <div class="flex justify-between">
+                    <!-- <div class="flex justify-between">
                         <p class="text-gray-700">Shipping</p>
                         <p class="text-gray-700">$4.99</p>
-                    </div>
+                    </div> -->
                     <hr class="my-4" />
                     <div class="flex justify-between">
                         <p class="text-lg font-bold">Total</p>
