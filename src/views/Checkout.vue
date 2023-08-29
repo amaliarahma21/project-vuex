@@ -159,7 +159,7 @@
           <div class="mt-6 border-t border-b py-2">
             <div class="flex items-center justify-between">
               <p class="text-sm font-medium text-gray-900">Subtotal</p>
-              <p class="font-semibold text-gray-900">$399.00</p>
+              <p class="font-semibold text-gray-900">Rp.{{ totalHarga() }}</p>
             </div>
             <div class="flex items-center justify-between">
               <p class="text-sm font-medium text-gray-900">Shipping</p>
@@ -173,7 +173,7 @@
         </div>
         <router-link to="/order">
           <button @click="performCheckout"
-            class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Place Order</button>
+            class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Check Out</button>
         </router-link>
       </div>
     </div>

@@ -20,19 +20,15 @@
               </div>
               <div class="flex flex-col pb-3">
                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                  Alamat Email :
+                  Nama Penerima :
                 </dt>
-                <dd class="text-lg font-semibold">{{ getOrder.user.email }}</dd>
+                <dd class="text-lg font-semibold">{{ getOrder.user.name }}</dd>
               </div>
               <div class="flex flex-col py-3">
                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                  Alamat Rumah :
+                  Alamat Email :
                 </dt>
-                <dd class="text-lg font-semibold">
-                  {{ getOrder.shipping_address.address }}, {{ getOrder.shipping_address.city }}, {{
-                    getOrder.shipping_address.state }}, {{ getOrder.shipping_address.country }}, {{
-    getOrder.shipping_address.postal_code }}
-                </dd>
+                <dd class="text-lg font-semibold">{{ getOrder.user.email }}</dd>
               </div>
               <div class="flex flex-col pt-3">
                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
@@ -60,7 +56,7 @@
               </div>
               <div class="flex flex-col py-3">
                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                  Alamat Tagihan :
+                  Alamat Penerima :
                 </dt>
                 <dd class="text-lg font-semibold">
                   {{ getOrder.shipping_address.address }}, {{ getOrder.shipping_address.city }}, {{
@@ -70,7 +66,7 @@
               </div>
               <div class="flex flex-col pt-3">
                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                  Total Barang :
+                  Total Harga :
                 </dt>
                 <dd class="text-lg font-semibold">
                   {{ getOrder.orders[0].grand_total }}
