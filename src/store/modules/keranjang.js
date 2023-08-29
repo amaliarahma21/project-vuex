@@ -5,11 +5,12 @@ const keranjang = {
     namespaced: true,
     state: {
         keranjang: [],
-        address: [],
+        address: {},
     },
 
     getters: {
         getKeranjang: (state) => state.keranjang,
+        getCheckout: (state) => state.dataCheckout,
         getAddress: (state) => state.address,
     },
     actions: {
@@ -85,6 +86,37 @@ const keranjang = {
             }
         },
 
+        async checkoutCart(
+          { commit, dispatch },
+          { shippingAddress, billingAddress, paymentType, deliveryType, cart_item_ids }
+      ) {
+          try {
+              const response = await axios.post(
+                  `https://ecommerce.olipiskandar.com/api/v1/checkout/order/store`,
+                  {
+                      shipping_address_id: shippingAddress,
+                      billing_address_id: billingAddress,
+                      payment_type: paymentType,
+                      delivery_type: deliveryType,
+                      cart_item_ids: cart_item_ids,
+                      transactionId: null,
+                      receipt: null,
+                  },
+                  {
+                      headers: {
+                          Authorization: `Bearer ${localStorage.getItem("token")}`,
+                      },
+                  }
+              );
+              console.log(response.data.message);
+              dispatch("fetchKeranjang");
+              commit('SET_CHECKOUT', response.data);
+          } catch (error) {
+              alert("Error");
+              console.log(error);
+          }
+      },
+
         async fetchAddress({ commit }) {
             try{
                 const token = localStorage.getItem('token');
@@ -94,8 +126,8 @@ const keranjang = {
                         'Authorization': `Bearer ${token}`
                     }
                 })
-                commit('SET_ADDRESS', getAddress.data.data)
-                console.log(getAddress.data.data)
+                commit('SET_ADDRESS', getAddress.data.data[0]);
+                return getAddress.data
             } catch (error) {
                 console.log(error);
             }
@@ -106,6 +138,9 @@ const keranjang = {
         SET_KERANJANG(state, keranjang) {
             state.keranjang = keranjang;
         },
+        SET_CHECKOUT(state, checkout) {
+          state.dataCheckout = checkout;
+      },
         SET_ADDRESS(state, address) {
             state.address = address;
         }

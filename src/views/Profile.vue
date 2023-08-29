@@ -10,31 +10,31 @@
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
         <span>No. Telepon</span>
-        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getAddress[0].phone }}</span></span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ address.phone }}</span></span>
       </li>
     </ul>
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
         <span>Alamat</span>
-        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getAddress[0].address }}</span></span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ address.address }}</span></span>
       </li>
     </ul>
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
         <span>Kota</span>
-        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getAddress[0].city }}</span></span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ address.city }}</span></span>
       </li>
     </ul>
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
         <span>Provinsi</span>
-        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getAddress[0].state }}</span></span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ address.state }}</span></span>
       </li>
     </ul>
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
         <span>Negara</span>
-        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getAddress[0].country }}</span></span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ address.country }}</span></span>
       </li>
     </ul>
   </div>
@@ -48,11 +48,12 @@
     export default {
         data(){
             return{
-                uData : []
+                uData : [],
             }
         },
         computed: {
             ...mapState('users', ['userData']),
+            ...mapState('keranjang', ['address']),
             ...mapGetters('keranjang', ['getAddress'])
         },
         methods: {

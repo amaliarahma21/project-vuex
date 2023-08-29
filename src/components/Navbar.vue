@@ -5,7 +5,7 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="" class="flex items-center">
         <img src="https://static.wixstatic.com/media/84b06e_717d310324e54451a0195d5658c70004~mv2.png/v1/fill/w_640,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84b06e_717d310324e54451a0195d5658c70004~mv2.png" class="h-8 mr-3" alt="Flowbite Logo">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Zeyy</span>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Zeyy's</span>
     </a>
     
     <div class="flex md:order-2">
