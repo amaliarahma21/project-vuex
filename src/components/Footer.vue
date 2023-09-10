@@ -27,7 +27,7 @@
                 <a href="/product" class="mr-4 hover:underline md:mr-6">Product</a>
             </li>
             <li>
-                <a href="/kategori" class="mr-4 hover:underline md:mr-6 ">Kategori</a>
+                <a href="/category" class="mr-4 hover:underline md:mr-6 ">Category</a>
             </li>
             <li>
                 <a href="/brand" class="mr-4 hover:underline md:mr-6">Brand</a>

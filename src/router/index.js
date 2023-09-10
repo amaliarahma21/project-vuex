@@ -6,10 +6,12 @@ import Product from "../views/Product.vue";
 import SingleProduct from "../views/SingleProduct.vue";
 import Contact from "../views/Contact.vue";
 import Brand from "../views/Brand.vue";
-import Kategori from "../views/Kategori.vue";
+import DetailBrand from "../views/DetailBrand.vue";
+import Category from "../views/Category.vue";
 import Profile from "../views/Profile.vue";
 import CartCheckout from "../views/CartCheckout.vue";
 import Order from "../views/Order.vue";
+import DetailCategory from "../views/DetailCategory.vue";
 
 function cekToken(to, from, next) {
     var isAuthenticated = false;
@@ -77,9 +79,21 @@ const routes = [
         component: Brand,
     },
     {
-        path: "/kategori",
-        name: "Kategori",
-        component: Kategori,
+        path: "/brand/:id",
+        name: "DetailBrand",
+        component: DetailBrand,
+        props: true
+    },
+    {
+        path: "/category",
+        name: "Category",
+        component: Category,
+    },
+    {
+        path: "/category/:slug",
+        name: "DetailCategory",
+        component: DetailCategory,
+        props: true,
     },
     {
         path: "/profile",

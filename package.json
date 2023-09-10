@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "flowbite": "^1.8.1",
     "flowbite-vue": "^0.0.17-next.0",
     "vue": "^3.3.4",
     "vue-axios": "^3.5.2",
-    "vue-router": "^4.0.13",
+    "vue-router": "^4.2.4",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

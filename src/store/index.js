@@ -2,10 +2,12 @@ import { createStore } from 'vuex';
 import auth from './modules/auth';
 import brand from './modules/brand';
 import product from './modules/product';
-import kategori from './modules/kategori';
+import category from './modules/category';
 import users from './modules/user';
 import keranjang from './modules/keranjang';
 import order from './modules/order';
+import wishlist from './modules/wishlist';
+import search from './modules/search'
 
 
 
@@ -16,11 +18,13 @@ const store = createStore({
   modules: {
     auth,
     brand,
-    kategori,
+    category,
     product,
     users,
     keranjang,
-    order
+    order,
+    wishlist,
+    search
     
   },
 });
