@@ -7,7 +7,8 @@ import users from './modules/user';
 import keranjang from './modules/keranjang';
 import order from './modules/order';
 import wishlist from './modules/wishlist';
-import search from './modules/search'
+import search from './modules/search';
+import blog from './modules/blog';
 
 
 
@@ -24,7 +25,8 @@ const store = createStore({
     keranjang,
     order,
     wishlist,
-    search
+    search,
+    blog
     
   },
 });

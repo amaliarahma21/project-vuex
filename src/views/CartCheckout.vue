@@ -1,4 +1,6 @@
 <template>
+    <br>
+    <br>
     <body>
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
             <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>

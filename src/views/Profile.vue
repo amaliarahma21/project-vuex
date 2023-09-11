@@ -1,4 +1,6 @@
 <template>
+  <br>
+  <br>
     <center>
     <div class="m-10 max-w-sm">
   <div class="rounded-lg border bg-white px-4 pt-8 pb-10 shadow-lg">

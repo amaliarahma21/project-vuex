@@ -8,6 +8,7 @@ import Contact from "../views/Contact.vue";
 import Brand from "../views/Brand.vue";
 import DetailBrand from "../views/DetailBrand.vue";
 import Category from "../views/Category.vue";
+import Blog from "../views/Blog.vue";
 import Profile from "../views/Profile.vue";
 import CartCheckout from "../views/CartCheckout.vue";
 import Order from "../views/Order.vue";
@@ -96,11 +97,17 @@ const routes = [
         props: true,
     },
     {
+        path: "/blog",
+        name: "Blog",
+        component: Blog,
+    },
+    {
         path: "/profile",
         name: "Profile",
         component: Profile,
         beforeEnter: cekToken
     },
+
 ]
 
 const router = createRouter({
