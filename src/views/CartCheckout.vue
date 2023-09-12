@@ -48,7 +48,7 @@
                         <p class="text-lg font-bold">Total</p>
                         <div class="">
                             <p class="mb-1 text-lg font-bold">{{ calculateTotal }}</p>
-                            <p class="text-sm text-gray-700">including VAT</p>
+                            <!-- <p class="text-sm text-gray-700">including VAT</p> -->
                         </div>
                     </div>
                     <router-link to="/checkout">

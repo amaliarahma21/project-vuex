@@ -76,6 +76,8 @@
                     <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
                         <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ capitalizeFirstLetter(product.name)
                         }}</h1>
+                        <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{{ formatRupiah (product.base_price)
+                        }}</h1>
 
                         <div class="mt-5 flex items-center">
                             <div class="flex items-center">
@@ -129,15 +131,13 @@
                                 type="submit">+ Cart</button> <br>
                             <button @click="addwishlist(product.variations[0].product_id)"
                                 class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    class="w-5 h-5" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
-                                    </path>
-                                </svg>
+                                <svg class="h-8 w-8 text-black md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" /></svg>
                             </button>
                             <button class="ml-4" @click="deleteWishlist(product.id)">
-                                Hapus Wishlist
+                                <svg class="h-8 w-8 text-black md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" 
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                                <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="7" x2="20" y2="7" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" />  
+                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
                             </button>
                         </div>
 
@@ -243,6 +243,14 @@ export default {
 
         capitalizeFirstLetter(text) {
             return text.charAt(0).toUpperCase() + text.slice(1);
+        },
+        formatRupiah(number){
+            const formatter = new Intl.NumberFormat("id-ID",
+            {
+                style: "currency",
+                currency: "IDR",
+            });
+            return formatter.format(number);
         },
     },
     beforeMount() {
