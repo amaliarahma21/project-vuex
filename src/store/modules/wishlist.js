@@ -18,8 +18,8 @@ const wishlist = {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
         })
-        console.log(dataWishlist.data)
-        commit('SET_WISHLIST', dataWishlist)
+        console.log(dataWishlist.data.data)
+        commit('SET_WISHLIST', dataWishlist.data)
       } catch (error) {
         alert('Ada Error')
         console.log(error)

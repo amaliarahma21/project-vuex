@@ -41,6 +41,12 @@
     </ul>
     <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
       <li class="flex items-center py-3 text-sm">
+        <span>Your Wishlist</span>
+        <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getWishlist.data.length}}</span></span>
+      </li>
+    </ul>
+    <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-black hover:shadow">
+      <li class="flex items-center py-3 text-sm">
         <span>Order</span>
         <span class="ml-auto"><span class="rounded-full bg-purple-300 py-1 px-2 text-xs font-medium text-purple-700">{{ getDashboard.total_order_products}}</span></span>
       </li>
@@ -63,20 +69,24 @@
             ...mapState('users', ['userData']),
             ...mapState('keranjang', ['address']),
             ...mapGetters('keranjang', ['getAddress']),
-            ...mapGetters('users', ['getDashboard'])
+            ...mapGetters('users', ['getDashboard']),
+            ...mapGetters('wishlist', ['getWishlist'])
         },
         methods: {
             ...mapActions('users', ['fetchUser']),
             ...mapActions('keranjang', ['fetchAddress']),
             ...mapActions('users', ['fetchDashboard']),
-            ...mapActions('keranjang', ['fetchKeranjang'])
+            ...mapActions('keranjang', ['fetchKeranjang']),
+            ...mapActions('wishlist', ['fetchWishlist'])
         },
         created() {
             this.uData = this.fetchUser();
             this.fetchAddress();
             this.fetchDashboard();
+            this.fetchWishlist();
             this.fetchKeranjang();
         },
+        
         
     }
 </script>
